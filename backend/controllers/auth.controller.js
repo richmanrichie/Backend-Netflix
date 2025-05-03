@@ -1,9 +1,12 @@
 import { User } from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
 import { generateTokenAndSetCookie } from "../utils/generateToken.js";
+import { ENV_VARS } from "../config/envVars.js";
 
 export async function signup(req, res) {
 	try {
+
+		console.log(ENV_VARS.JWT_SECRET);
 
 		const { email, password } = req.body;
 	
